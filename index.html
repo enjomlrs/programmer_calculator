@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programmer Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="sky-background">
+        <div class="clouds"></div>
+        <div class="birds"></div>
+        <div class="stars"></div>
+    </div>
+
+    <div class="celestial-body" role="button" tabindex="0" aria-label="Toggle day/night"></div>
+
+    <div class="mountain-range"></div>
+
+    <div class="world-entities">
+        <div class="house">
+            <div class="roof"></div>
+            <div class="window"></div>
+        </div>
+        <div class="tree t1"></div>
+        <div class="tree t2"></div>
+        <div class="tree t3"></div>
+        <div class="entity slime"></div>
+        <div class="entity bunny"></div>
+    </div>
+
+    <div class="organic-terrain"></div>
+    <div class="grass-layer"></div>
+
+    <div class="ui-overlay"></div>
+
+    <div class="calculator">
+        <div class="base-display">
+            <div class="base-row" data-base="2">
+                <span class="label">BIN</span>
+                <span class="value" id="binValue">0</span>
+            </div>
+            <div class="base-row active" data-base="10">
+                <span class="label">DEC</span>
+                <span class="value" id="decValue">0</span>
+            </div>
+            <div class="base-row" data-base="8">
+                <span class="label">OCT</span>
+                <span class="value" id="octValue">0</span>
+            </div>
+            <div class="base-row" data-base="16">
+                <span class="label">HEX</span>
+                <span class="value" id="hexValue">0</span>
+            </div>
+        </div>
+
+        <input type="text" id="expressionDisplay" placeholder="0" readonly />
+
+        <div class="base-selector">
+            <button class="base-btn" data-base="2">BIN</button>
+            <button class="base-btn active" data-base="10">DEC</button>
+            <button class="base-btn" data-base="8">OCT</button>
+            <button class="base-btn" data-base="16">HEX</button>
+        </div>
+
+        <div class="keypad">
+            <button id="clear">CE</button>
+            <button class="number" data-num="0">0</button>
+            <button class="operator" data-op=".">.</button>
+            <button id="backspace">⌫</button>
+
+            <button class="number" data-num="7">7</button>
+            <button class="number" data-num="8">8</button>
+            <button class="number" data-num="9">9</button>
+            <button class="operator" data-op="-">-</button>
+
+            <button class="number" data-num="4">4</button>
+            <button class="number" data-num="5">5</button>
+            <button class="number" data-num="6">6</button>
+            <button class="operator" data-op="+">+</button>
+
+            <button class="number" data-num="1">1</button>
+            <button class="number" data-num="2">2</button>
+            <button class="number" data-num="3">3</button>
+            <button class="operator" data-op="*">X</button>
+
+            
+            <button class="number_hex" data-num="A">A</button>
+            <button class="number_hex" data-num="B">B</button>
+            <button class="number_hex" data-num="C">C</button>
+            <button class="operator" data-op="/">/</button>
+
+            
+            <button class="number_hex" data-num="D">D</button>
+            <button class="number_hex" data-num="E">E</button>
+            <button class="number_hex" data-num="F">F</button>
+            <button id="equals">=</button>
+        </div>
+    </div>
+
+    <div class="duo-wrap">
+        <div class="duo-card left">
+            <div class="duo-name">Enjo</div>
+            <button class="duo-sprite duo-trigger" type="button" data-modal="enjoModal" aria-label="Open Enjo popup">
+                <img src="img/enjo.png" alt="Enjo character" />
+            </button>
+        </div>
+
+        <div class="duo-card right">
+            <div class="duo-name">Shyrine</div>
+            <button class="duo-sprite duo-trigger" type="button" data-modal="shyModal" aria-label="Open Shyrine popup">
+                <img src="img/shy.png" alt="Shyrine character" />
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="enjoModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="true"></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="enjoModalTitle">
+            <button class="modal-close" type="button" aria-label="Close popup" data-close="true">X</button>
+            <div class="modal-title" id="enjoModalTitle">Enjo</div>
+
+            <div class="modal-content">
+                <img class="modal-img" src="img/inju x kinisu.jpg" alt="Enjo photo" />
+                <div class="modal-text">INJU 💗 KINISU</div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="modal-btn" type="button" data-close="true">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="shyModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="true"></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="shyModalTitle">
+            <button class="modal-close" type="button" aria-label="Close popup" data-close="true">X</button>
+            <div class="modal-title" id="shyModalTitle">Shyrine</div>
+
+            <div class="modal-content">
+                <img class="modal-img" src="img/shy.png" alt="n/a" />
+                <div class="modal-text">papansin</div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="modal-btn" type="button" data-close="true">OK</button>
+            </div>
+        </div>
+    </div>
+
+<button id="bgmToggle" type="button" aria-label="Toggle music">♫</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
